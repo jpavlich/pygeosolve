@@ -54,8 +54,7 @@ class TestConstraints(unittest.TestCase):
 
         print(angle, tools.angle_between(self.line_a, self.line_b))
 
-        #self.problem.plot(False)
-        self.problem.plot(True)
+        self.problem.plot(False)
 
         ###
         # check solution

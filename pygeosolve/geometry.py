@@ -1,8 +1,10 @@
 from __future__ import division
 
+# abstract base classes
 import abc
 import numpy as np
 import operator
+import functools
 
 from .parameters import Parameter
 
@@ -47,7 +49,7 @@ class Primitive(object):
 
     @property
     def fixed(self):
-        return reduce(operator.and_, [point.fixed for point in self.points])
+        return functools.reduce(operator.and_, [point.fixed for point in self.points])
 
     @fixed.setter
     def fixed(self, fixed):
