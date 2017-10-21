@@ -3,9 +3,10 @@ from __future__ import division
 import abc
 import numpy as np
 import operator
-import tools
+import functools
+from . import tools
 
-from geometry import Primitive, Line
+from .geometry import Primitive, Line
 
 """Constraint classes."""
 
@@ -56,7 +57,7 @@ class AbstractConstraint(object):
         points = [primitive.points for primitive in self.primitives]
 
         # combine all points into one list and return
-        return reduce(operator.add, points)
+        return functools.reduce(operator.add, points)
 
     @property
     def params(self):

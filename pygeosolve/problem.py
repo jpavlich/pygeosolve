@@ -4,8 +4,8 @@ import numpy as np
 import scipy.optimize as opt
 import imp
 
-import geometry
-import plot
+from . import geometry
+from . import plot
 
 """Problem classes"""
 
@@ -178,13 +178,13 @@ class Problem(object):
     def plot(self, *args, **kwargs):
         """Plots the problem with its current values.
 
-        Requires the PyQt4 module."""
+        Requires the PyQt5 module."""
 
-        # try to find PyQt4 module
+        # try to find PyQt5 module
         try:
-            imp.find_module("PyQt4")
+            imp.find_module("PyQt5")
         except ImportError:
-            raise Exception("The PyQt4 module is required for plotting")
+            raise Exception("The PyQt5 module is required for plotting")
 
         # create canvas
         canvas = plot.Canvas()

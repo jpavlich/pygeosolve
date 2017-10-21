@@ -33,14 +33,14 @@ line_a.start(), 0))
 
 # solve
 problem.solve()
-print problem.solution
+print(problem.solution)
 
 # print angles between lines
 import pygeosolve.tools as tools
-print tools.angle_between(line_a, line_b)
-print tools.angle_between(line_b, line_c)
-print tools.angle_between(line_c, line_d)
-print tools.angle_between(line_d, line_a)
+print(tools.angle_between(line_a, line_b))
+print(tools.angle_between(line_b, line_c))
+print(tools.angle_between(line_c, line_d))
+print(tools.angle_between(line_d, line_a))
 
 # plot
 problem.plot()

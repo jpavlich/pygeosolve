@@ -43,17 +43,19 @@ class TestConstraints(unittest.TestCase):
         # create angular constraint
         angle = ConstraintFactory.random_angular_constraint(self.problem, \
         self.line_a, self.line_b)
+    
 
         # solve
         self.problem.solve()
-        print self.problem.solution
+        print(self.problem.solution)
 
-        print "A: ({0}, {1})".format(self.line_a.dx(), self.line_a.dy())
-        print "B: ({0}, {1})".format(self.line_b.dx(), self.line_b.dy())
+        print("A: ({0}, {1})".format(self.line_a.dx(), self.line_a.dy()))
+        print("B: ({0}, {1})".format(self.line_b.dx(), self.line_b.dy()))
 
-        print angle, tools.angle_between(self.line_a, self.line_b)
+        print(angle, tools.angle_between(self.line_a, self.line_b))
 
-        self.problem.plot(False)
+        #self.problem.plot(False)
+        self.problem.plot(True)
 
         ###
         # check solution

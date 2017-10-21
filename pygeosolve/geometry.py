@@ -4,7 +4,7 @@ import abc
 import numpy as np
 import operator
 
-from parameters import Parameter
+from .parameters import Parameter
 
 """Geometry classes."""
 

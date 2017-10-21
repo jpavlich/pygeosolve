@@ -27,7 +27,7 @@ line_a.fixed = True
 
 # solve
 problem.solve()
-print problem.solution
+print(problem.solution)
 
 # plot
 problem.plot()

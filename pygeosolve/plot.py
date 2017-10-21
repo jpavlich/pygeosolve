@@ -1,10 +1,10 @@
 import sys
 
-import PyQt4.Qt
-from PyQt4.Qt import QApplication, QMainWindow
-import PyQt4.QtCore
-import PyQt4.QtGui
-from PyQt4.QtGui import QGraphicsScene, QGraphicsView, QGraphicsLineItem as QLine
+import PyQt5.Qt
+from PyQt5.Qt import QApplication, QMainWindow
+import PyQt5.QtCore
+import PyQt5.QtGui
+from PyQt5.QtWidgets import QGraphicsScene, QGraphicsView, QGraphicsLineItem as QLine
 
 """Plot classes"""
 
@@ -45,13 +45,13 @@ class Canvas(object):
 
     def initialise(self):
         # set close behaviour to prevent zombie processes
-        self.main_window.setAttribute(PyQt4.QtCore.Qt.WA_DeleteOnClose, True)
+        self.main_window.setAttribute(PyQt5.QtCore.Qt.WA_DeleteOnClose, True)
 
         # set view antialiasing
-        self.view.setRenderHints(PyQt4.QtGui.QPainter.Antialiasing \
-        | PyQt4.Qt.QPainter.TextAntialiasing \
-        | PyQt4.Qt.QPainter.SmoothPixmapTransform \
-        | PyQt4.QtGui.QPainter.HighQualityAntialiasing)
+        self.view.setRenderHints(PyQt5.QtGui.QPainter.Antialiasing \
+        | PyQt5.Qt.QPainter.TextAntialiasing \
+        | PyQt5.Qt.QPainter.SmoothPixmapTransform \
+        | PyQt5.QtGui.QPainter.HighQualityAntialiasing)
 
         # set central widget to be the view
         self.main_window.setCentralWidget(self.view)
@@ -65,7 +65,7 @@ class Canvas(object):
     def calibrate_view(self):
         # fit contents of scene in view
         self.view.fitInView(self.scene.itemsBoundingRect(), \
-        PyQt4.QtCore.Qt.KeepAspectRatio)
+        PyQt5.QtCore.Qt.KeepAspectRatio)
 
         # set scale
         self.view.scale(5, 5)
@@ -73,7 +73,7 @@ class Canvas(object):
     def add_line(self, line):
         """Adds a line to the scene.
 
-        :param line: the :class:`~PyQt4.QtGui.QGraphicsLineItem` to add
+        :param line: the :class:`~PyQt5.QtGui.QGraphicsLineItem` to add
         """
 
         # create new line
